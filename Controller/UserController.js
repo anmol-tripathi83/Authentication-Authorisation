@@ -2,6 +2,7 @@ const userModel = require("../Models/userModel");
 // importing and jwtwebtoken(after installing it by "npm i jwtwebtoken" command)
 const jwt = require("jsonwebtoken");
 
+// Controller for handling Signup
 const handleUserSignup = (req,res) =>{
     try{
     // it will create a document in userModel collection
@@ -16,6 +17,7 @@ catch(err){
 }
 }
 
+// Controller for handling Login
 const handleUserLogin = (req,res) =>{
     let {email} = req.body;    // descructuring of object
     try{
@@ -40,5 +42,10 @@ const handleUserLogin = (req,res) =>{
     }
 }
 
-module.exports = {handleUserSignup, handleUserLogin};
+// Controller for getting details for those who is authorised user
+const getDetails = (req,res) =>{
+    console.log(req.email);
+}
+
+module.exports = {handleUserSignup, handleUserLogin, getDetails};
 

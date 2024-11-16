@@ -8,6 +8,8 @@ var dotenv = require("dotenv");
 dotenv.config();    // configuring dotenv
 var mongoose = require("mongoose");
 
+
+// for cookie => app.use(cookieParser);
 app.use(bodyParser.json());    // middleware that will parse the body coming from api into json format(understand json object coming from through api)
 app.use(bodyParser.urlencoded({extended:true}));  // middleware that will encode the url in a body
 
@@ -27,3 +29,9 @@ app.use('/api/v1/user',router);   // router middleware (works when api call for 
 app.listen(process.env.PORT, ()=>{     // process.env.PORT - it will get the PORT from .env file and place here(for using the data in the env file we have to import the dotenv and configure it)
     console.log(`listening to port ${process.env.PORT}`);
 });
+
+
+
+
+
+// Packages we need to install: npm i nodemon body-parser jsonwebtoken express mongoose dotenv 
